@@ -1,17 +1,41 @@
-node_modules/
-.expo/
-.expo-shared/
-dist/
-.env
-.env.local
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-*.orig.*
-web-build/
+# Gradle files
+.gradle/
+build/
+*.jar
+
+# Android Studio
+.idea/
+*.iml
+*.iws
+*.ipr
+local.properties
+
+# OS files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Build outputs
+*.apk
+*.ap_
+*.dex
+*.class
+
+# Generated files
+gen/
+.classpath
+.project
+.cproject
+
+# IDE
+.settings/
+.vscode/
+*.swp
+*.swo
+
+# Node
+node_modules/
 npm-debug.log
-yarn-debug.log
-yarn-error.log

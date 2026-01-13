@@ -1,201 +1,126 @@
 # Plantive - Plant Care Made Simple
 
-![Status](https://img.shields.io/badge/Status-Active%20Development-green)
-![React Native](https://img.shields.io/badge/React%20Native-0.73-blue)
-![Expo](https://img.shields.io/badge/Expo-50.0-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue)
+Plantive is an Android application designed to make plant care simple, calm, and mistake-free for beginners and urban gardeners.
 
-Plantive is a mobile app that makes plant care simple, calm, and mistake-free for beginners and urban gardeners. The app uses a "zero thinking" design philosophy—users understand what to do instantly through visual cues, minimal text, and one action per screen.
+## Features
 
-## ✨ Key Features
+- **Home Dashboard**: Quick overview of plant health and today's tasks
+- **Plant Management**: Add and manage your plants with images and care history
+- **Smart Reminders**: Never forget to water your plants with intelligent notifications
+- **Task Tracking**: Track watering, fertilizing, and other care activities
+- **AI Assistant**: Ask questions about plant care in natural language
+- **Settings**: Customize notifications, language, and theme
 
-- 🌱 **Plant Management**: Add and track all your plants with ease
-- 📅 **Smart Reminders**: Get notified when plants need watering or fertilizing
-- 🎨 **Visual Health Status**: Color-coded indicators (green/yellow/red) show plant health at a glance
-- 📊 **Dashboard Overview**: See your garden's overall status in seconds
-- 🏡 **Smart Filtering**: View plants by location (indoor/outdoor) or health status
-- 🎯 **Simple Interface**: No confusing menus—just tap what you need
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Node.js 16+ and npm
-- iOS Simulator (Mac) or Android Emulator
-
-### Installation
-
-```bash
-cd plantive
-npm install
-npm start
-```
-
-Choose platform:
-- `i` for iOS
-- `a` for Android  
-- `w` for web
-
-## 📁 Project Structure
+## Project Structure
 
 ```
-plantive/
-├── src/
-│   ├── screens/          # 5 main screens
-│   │   ├── WelcomeScreen.tsx
-│   │   ├── HomeDashboardScreen.tsx
-│   │   ├── MyPlantsScreen.tsx
-│   │   ├── PlantDetailsScreen.tsx
-│   │   └── TasksScreen.tsx
-│   ├── components/       # Reusable UI components
-│   │   ├── Button.tsx
-│   │   ├── Card.tsx
-│   │   └── Badge.tsx
-│   ├── store/            # Zustand state management
-│   │   └── plantStore.ts
-│   ├── theme/            # Design system
-│   │   ├── tokens.ts
-│   │   └── index.ts
-│   ├── utils/            # Helper functions
-│   └── App.tsx           # Navigation & main logic
-├── .github/
-│   └── copilot-instructions.md  # 👈 Comprehensive AI development guide
-├── DEVELOPMENT.md        # Developer workflow
-├── CONTRIBUTING.md       # Contribution guidelines
-├── package.json
-├── tsconfig.json
-└── app.json              # Expo config
+app/
+├── src/main/
+│   ├── java/com/plantive/
+│   │   ├── ui/              # Activities and Fragments
+│   │   ├── models/          # Data models (Plant, Task)
+│   │   ├── utils/           # Database and utilities
+│   │   └── adapters/        # RecyclerView adapters
+│   ├── res/
+│   │   ├── layout/          # XML layout files
+│   │   ├── values/          # String, color, and theme resources
+│   │   ├── drawable/        # Drawable resources
+│   │   └── menu/            # Menu resources
+│   └── AndroidManifest.xml
+└── build.gradle.kts
 ```
 
-## 🎨 Design System
+## Technology Stack
 
-All styling uses **design tokens** from `src/theme/tokens.ts` - never hardcode colors!
+- **Language**: Java
+- **Min SDK**: 24 (Android 7.0)
+- **Target SDK**: 34 (Android 14)
+- **Architecture**: MVVM with LiveData
+- **Database**: Room Database
+- **UI**: Material Design 3
+- **Networking**: Retrofit (for future API integration)
+- **Image Loading**: Glide
 
-**Colors**:
-- Primary: #2D5016 (Deep green)
-- Secondary: #7CB342 (Light green)
-- Healthy: #4CAF50 | Warning: #FFC107 | Urgent: #F44336
+## Design System
 
-**Spacing**: xs (4) to 2xl (48)  
-**Typography**: 7 sizes from xs (12px) to 3xl (32px)
+### Colors
+- **Primary Green**: Deep green (#1B5E20)
+- **Secondary Green**: Light green (#C8E6C9)
+- **Alert Red**: #D32F2F
+- **Alert Yellow**: #FBC02D
+- **Neutral**: Whites and grays
 
-## 🧠 State Management
+### Typography
+- **Font Family**: Sans-serif
+- **Large headings** for clear information hierarchy
+- **High contrast** for readability
 
-Uses **Zustand** for simple, lightweight global state:
+## Getting Started
 
-```typescript
-import { usePlantStore } from '@store/plantStore';
+1. Clone the repository
+2. Open the project in Android Studio
+3. Sync Gradle files
+4. Run the app on an emulator or device (min SDK 24)
 
-const plants = usePlantStore((state) => state.plants);
-usePlantStore.getState().addPlant({ /* ... */ });
-```
+## Architecture
 
-**Key Methods**:
-- `addPlant()`, `updatePlant()`, `removePlant()`
-- `addTask()`, `completeTask()`, `rescheduleTask()`
-- `getTodaysTasks()`, `getUpcomingTasks()`, `getPlantById()`
+### MVVM Pattern
+- **Model**: Data classes (Plant, Task) and Room Database
+- **View**: Activities and Fragments with XML layouts
+- **ViewModel**: LiveData for reactive UI updates
 
-## 🧭 Navigation
+### Key Components
 
-Bottom tabs (Home, Plants, Tasks) with stack navigation for details:
-- Home → Links to other sections
-- Plants → Grid → Plant Details
-- Tasks → Today/Upcoming tabs
+1. **WelcomeActivity**: Onboarding experience
+2. **MainActivity**: Main app with bottom navigation
+3. **HomeDashboardFragment**: Central hub showing plant status
+4. **MyPlantsFragment**: Grid view of all plants
+5. **TasksRemindersFragment**: Task management
+6. **AIAssistantFragment**: Chat interface
+7. **SettingsFragment**: User preferences
 
-## 📚 Documentation
+## Database Schema
 
-| File | Purpose |
-|------|---------|
-| **`.github/copilot-instructions.md`** | **START HERE** - Comprehensive AI development guide |
-| `README.md` | Project overview (this file) |
-| `DEVELOPMENT.md` | Developer workflows, examples, debugging tips |
-| `CONTRIBUTING.md` | Code style, branch strategy, PR process |
-| `SETUP_COMPLETE.md` | Project creation summary |
+### Plants Table
+- id (Primary Key)
+- name
+- type
+- imageUrl
+- location
+- healthStatus
+- dateAdded
+- waterFrequencyDays
+- fertilizeFrequencyDays
 
-## 💻 Development
+### Tasks Table
+- id (Primary Key)
+- plantId (Foreign Key)
+- taskType
+- scheduledDate
+- completed
+- completedDate
 
-```bash
-# Start development
-npm start
+## Future Enhancements
 
-# Type checking
-npm run type-check
+- [ ] Cloud synchronization
+- [ ] Weather integration
+- [ ] Push notifications
+- [ ] Image recognition for plant identification
+- [ ] Plant care tips database
+- [ ] Community features
+- [ ] Plant shop integration
 
-# Linting
-npm run lint
-```
+## Development Notes
 
-**Key Rules**:
-- ✅ Use theme tokens (no hardcoded colors/spacing)
-- ✅ TypeScript strict mode enforced
-- ✅ Functional components with hooks
-- ✅ One action per screen (UX principle)
+- All activities and fragments are placeholders with TODO comments
+- Adapters need to be implemented for RecyclerViews
+- Database operations should use background threads (LiveData/ViewModel)
+- Material Design components are used throughout
 
-## 🚀 Building for Production
+## License
 
-```bash
-# Build for iOS
-eas build --platform ios
+[Add your license here]
 
-# Build for Android
-eas build --platform android
+## Contact
 
-# Web
-npm run web
-```
-
-## 📋 Project Status
-
-- ✅ Core architecture complete
-- ✅ 5 main screens with navigation
-- ✅ Zustand state management
-- ✅ Design system with tokens
-- ⏳ Plant form/edit screen
-- ⏳ Image uploads
-- ⏳ Push notifications
-- ⏳ Weather API integration
-
-## 🤝 Contributing
-
-See `CONTRIBUTING.md` for code style, branch strategy, and PR process.
-
-**Quick checklist**:
-- [ ] Use theme tokens (never hardcode colors)
-- [ ] Follow TypeScript strict mode
-- [ ] Test on device/emulator
-- [ ] ESLint/Prettier pass
-- [ ] Update docs if changing architecture
-
-## 🎯 Design Philosophy
-
-**"Zero Thinking" UX**:
-- ✨ Users understand what to do in 5 seconds
-- 🎨 Visual (color, emoji) over text
-- 🎯 One action per screen
-- 🌿 Soft, calm interface
-
-**When in doubt**: Remove text, add emoji/color, simplify.
-
-## 🐛 Troubleshooting
-
-| Issue | Solution |
-|-------|----------|
-| Navigation fails | Verify screen added to Stack/Tab in App.tsx |
-| Styles wrong | Check using theme tokens from `src/theme/tokens.ts` |
-| State not updating | Use Zustand selector: `usePlantStore((state) => state.property)` |
-| Plant not found | Verify plantId passed from parent screen |
-
-See `DEVELOPMENT.md` for more tips.
-
-## 📖 Resources
-
-- [Expo Docs](https://docs.expo.dev/)
-- [React Navigation](https://reactnavigation.org/)
-- [Zustand](https://github.com/pmndrs/zustand)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
-
----
-
-**Getting Started?** Read `.github/copilot-instructions.md` for comprehensive development guidance! 🌱
-
-MIT
+[Add contact information]

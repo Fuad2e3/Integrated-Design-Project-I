@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Green Palette -->
+    <color name="primary_deep_green">#1B5E20</color>
+    <color name="primary_green">#2E7D32</color>
+    <color name="primary_light_green">#4CAF50</color>
+    <color name="primary_very_light_green">#81C784</color>
+
+    <!-- Secondary Green (Light) -->
+    <color name="secondary_light_green">#C8E6C9</color>
+    <color name="secondary_pale_green">#E8F5E9</color>
+
+    <!-- Alert Colors -->
+    <color name="alert_red">#D32F2F</color>
+    <color name="alert_yellow">#FBC02D</color>
+    <color name="alert_green">#388E3C</color>
+
+    <!-- Neutral Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_light">#BDBDBD</color>
+    <color name="white">#FFFFFF</color>
+    <color name="background_light">#FAFAFA</color>
+    <color name="background_white">#FFFFFF</color>
+    <color name="divider">#E0E0E0</color>
+
+    <!-- Dark Theme -->
+    <color name="dark_bg_primary">#121212</color>
+    <color name="dark_bg_secondary">#1E1E1E</color>
+    <color name="dark_text_primary">#FFFFFF</color>
+    <color name="dark_text_secondary">#B0B0B0</color>
+</resources>
