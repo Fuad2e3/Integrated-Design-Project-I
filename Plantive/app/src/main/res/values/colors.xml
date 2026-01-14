@@ -2,18 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
-    <!-- Plantive Brand Colors -->
-    <color name="primary_green">#2D5A27</color> <!-- Deep green -->
-    <color name="secondary_green">#A8D5BA</color> <!-- Light green -->
-    <color name="background_green">#F1F8F4</color> <!-- Very light green for background -->
-
-    <!-- Status Colors -->
-    <color name="status_red">#E57373</color> <!-- Urgent -->
-    <color name="status_yellow">#FFF176</color> <!-- Warning -->
-    <color name="status_green">#81C784</color> <!-- Healthy -->
-
-    <!-- Neutral Colors -->
+    <color name="primary_green">#2D5A27</color>
+    <color name="secondary_green">#A8D5BA</color>
+    <color name="background_green">#F1F8F4</color>
+    <color name="status_red">#E57373</color>
+    <color name="status_yellow">#FFF176</color>
+    <color name="status_green">#81C784</color>
     <color name="text_primary">#1B1B1B</color>
     <color name="text_secondary">#757575</color>
 </resources>
