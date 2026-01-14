@@ -1,32 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Primary Green Palette -->
-    <color name="primary_deep_green">#1B5E20</color>
-    <color name="primary_green">#2E7D32</color>
-    <color name="primary_light_green">#4CAF50</color>
-    <color name="primary_very_light_green">#81C784</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
 
-    <!-- Secondary Green (Light) -->
-    <color name="secondary_light_green">#C8E6C9</color>
-    <color name="secondary_pale_green">#E8F5E9</color>
+    <!-- Plantive Brand Colors -->
+    <color name="primary_green">#2D5A27</color> <!-- Deep green -->
+    <color name="secondary_green">#A8D5BA</color> <!-- Light green -->
+    <color name="background_green">#F1F8F4</color> <!-- Very light green for background -->
 
-    <!-- Alert Colors -->
-    <color name="alert_red">#D32F2F</color>
-    <color name="alert_yellow">#FBC02D</color>
-    <color name="alert_green">#388E3C</color>
+    <!-- Status Colors -->
+    <color name="status_red">#E57373</color> <!-- Urgent -->
+    <color name="status_yellow">#FFF176</color> <!-- Warning -->
+    <color name="status_green">#81C784</color> <!-- Healthy -->
 
     <!-- Neutral Colors -->
-    <color name="text_primary">#212121</color>
+    <color name="text_primary">#1B1B1B</color>
     <color name="text_secondary">#757575</color>
-    <color name="text_light">#BDBDBD</color>
-    <color name="white">#FFFFFF</color>
-    <color name="background_light">#FAFAFA</color>
-    <color name="background_white">#FFFFFF</color>
-    <color name="divider">#E0E0E0</color>
-
-    <!-- Dark Theme -->
-    <color name="dark_bg_primary">#121212</color>
-    <color name="dark_bg_secondary">#1E1E1E</color>
-    <color name="dark_text_primary">#FFFFFF</color>
-    <color name="dark_text_secondary">#B0B0B0</color>
 </resources>
