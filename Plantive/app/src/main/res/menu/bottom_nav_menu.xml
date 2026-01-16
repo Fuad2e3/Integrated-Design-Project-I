@@ -9,9 +9,9 @@
         android:icon="@android:drawable/ic_menu_gallery"
         android:title="My Plants" />
     <item
-        android:id="@+id/navigation_tasks"
-        android:icon="@android:drawable/ic_menu_agenda"
-        android:title="Tasks" />
+        android:id="@+id/navigation_market"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="Buy/Sell" />
     <item
         android:id="@+id/navigation_ai"
         android:icon="@android:drawable/ic_menu_help"
